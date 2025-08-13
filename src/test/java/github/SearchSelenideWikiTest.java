@@ -8,6 +8,20 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class SearchSelenideWikiTest {
 
+    public String codeExample = """
+            @ExtendWith({SoftAssertsExtension.class})
+            class Tests {
+              @Test
+              void test() {
+                Configuration.assertionMode = SOFT;
+                open("page.html");
+            
+                $("#first").should(visible).click();
+                $("#second").should(visible).click();
+              }
+            }
+            """;
+
     @Test
     void SearchWikiTest() {
 
@@ -27,6 +41,7 @@ public class SearchSelenideWikiTest {
         $("#wiki-body").$(byText("Soft assertions")).click();
         $("#repo-content-pjax-container").shouldHave(text("Using JUnit5"));
         $("#repo-content-pjax-container").shouldHave(text("@ExtendWith({SoftAssertsExtension.class})"));
+        $("#repo-content-pjax-container").shouldHave(text(codeExample));
     }
 
 }
