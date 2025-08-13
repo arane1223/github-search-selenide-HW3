@@ -23,7 +23,7 @@ public class SearchSelenideWikiTest {
             """;
 
     @Test
-    void SearchWikiTest() {
+    void searchWikiTest() {
 
         //- Откройте страницу Selenide в Github
         open("https://github.com");
