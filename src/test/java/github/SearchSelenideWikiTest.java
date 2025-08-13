@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class SearchSelenideWikiTest {
-
+//переменная, содержащая искомый код на GitHub
     public String codeExample = """
             @ExtendWith({SoftAssertsExtension.class})
             class Tests {
@@ -39,9 +39,9 @@ public class SearchSelenideWikiTest {
 
         // - Откройте страницу SoftAssertions, проверьте что внутри есть пример кода для JUnit5
         $("#wiki-body").$(byText("Soft assertions")).click();
-        $("#repo-content-pjax-container").shouldHave(text("Using JUnit5"));
-        $("#repo-content-pjax-container").shouldHave(text("@ExtendWith({SoftAssertsExtension.class})"));
-        $("#repo-content-pjax-container").shouldHave(text(codeExample));
+        $("#repo-content-pjax-container").shouldHave(text("Using JUnit5")); //изначальная проверка по заголовку
+        $("#repo-content-pjax-container").shouldHave(text("@ExtendWith({SoftAssertsExtension.class})")); //правка, проверка по первой строчке кода
+        $("#repo-content-pjax-container").shouldHave(text(codeExample)); //правка, проверка по переменной, содержащей весь код
     }
 
 }
