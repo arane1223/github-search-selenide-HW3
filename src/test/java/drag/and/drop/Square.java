@@ -15,7 +15,7 @@ class Square {
     }
 
     @Test
-    void Actions() {
+    void dropingSquaresWithActions() {
         // - Перенесите прямоугольник А на место В
         actions()
                 .moveToElement($("#column-a"))
