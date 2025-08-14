@@ -43,6 +43,5 @@ public class SearchSelenideWikiTest {
         $("#repo-content-pjax-container").shouldHave(text("@ExtendWith({SoftAssertsExtension.class})")); //правка, проверка по первой строчке кода
         $("#repo-content-pjax-container").shouldHave(text(codeExample)); //правка, проверка по переменной, содержащей весь код
     }
-
 }
 
