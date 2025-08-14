@@ -1,4 +1,4 @@
-package drag.and.drop;
+package herokuapp;
 
 import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.*;
