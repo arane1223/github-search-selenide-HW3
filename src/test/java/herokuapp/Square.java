@@ -14,8 +14,14 @@ class Square {
         open("https://the-internet.herokuapp.com/drag_and_drop");
     }
 
+    @BeforeEach
+    void chekingInitialCondition () {
+        $("#column-a").shouldHave(text("A"));
+        $("#column-b").shouldHave(text("B"));
+    }
+
     @Test
-    void dropingSquaresWithActions() {
+    void dropingSquaresWithActionsTest() {
         // - Перенесите прямоугольник А на место В
         actions()
                 .moveToElement($("#column-a"))
@@ -31,7 +37,7 @@ class Square {
 
     // - В Selenide есть команда $(element).dragAndDrop($(to-element)), проверьте работает ли тест, если использовать её вместо actions()
     @Test
-    void dropingSquaresWithDragAndDrop () {
+    void dropingSquaresWithDragAndDropTest () {
         $("#column-a").dragAndDropTo($("#column-b"));
         $("#column-a").shouldHave(text("B"));
         $("#column-b").shouldHave(text("A"));
